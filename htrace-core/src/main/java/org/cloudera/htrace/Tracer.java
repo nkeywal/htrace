@@ -42,12 +42,9 @@ public class Tracer {
   public static final TraceInfo DONT_TRACE = new TraceInfo(-1, -1);
   protected static String processId = null;
 
-  private static Tracer instance = null;
+  private static Tracer instance = new Tracer();
 
-  synchronized protected static Tracer getInstance() {
-    if (instance == null) {
-      instance = new Tracer();
-    }
+  protected static Tracer getInstance() {
     return instance;
   }
 
